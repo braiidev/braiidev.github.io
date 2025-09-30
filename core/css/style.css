@@ -1,0 +1,210 @@
+/*https://colorate.azurewebsites.net/es/Color/1B102D*/
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inter"),
+    url("/core/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: Monserrat;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Monserrat"),
+    url("/core/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  text-decoration: none;
+  list-style: none;
+  transition: all var(--slow-transition);
+}
+
+:root{
+  /* Colors */
+  --co-primary: #4b0082;
+  --co-secondary: #9760c0;
+  --co-latest: #378200;
+  --co-saturate: #271741;
+  --co-bg: #1b102d;
+  --co-fg: #f5f5fa;
+  --co-hover: #5c1a96;
+  --co-active: #36005e;
+  --co-text: #efefef;
+  --co-link: #8a2be2;
+  --co-shadow: #14052d;
+
+  /* Shadow */
+  --box-shadow: drop-shadow(0 0 .3rem var(--co-primary));
+  --full-shadow: drop-shadow(0 0 .25em var(--co-primary)) drop-shadow(0 0 .15em var(--co-primary));
+
+  /* Spacing'n sizing*/
+  --size: 14px;
+  --radius: 0.42em;
+  
+  /* Timing */
+  --transition: 0.15s ease-in-out;
+  --slow-transition: 0.3s ease-in-out;
+}
+
+body {
+  font-size: var(--size);
+  max-width: 2000px;
+  background: linear-gradient(var(--co-bg), var(--co-secondary)) fixed;
+  color: var(--co-fg);
+  margin: auto;
+}
+
+.inherit{
+  transition: inherit;
+  color: inherit;
+  background: inherit;
+}
+.active{
+  background-color: var(--co-active) !important;
+  filter: var(--box-shadow) !important;
+  font-weight: bolder;
+  font-size: 0.95rem;
+}
+.btn-lg{
+  width: 100%;
+  flex-grow: 2;
+}
+.link {
+  color: var(--co-link);
+  transition: color var(--transition);
+}
+.link:hover {
+  color: var(--co-active);
+}
+/* Header-Navbar */
+.nav{
+  margin: 1rem auto;
+  padding: 1.5rem;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--co-saturate);
+  filter: var(--full-shadow);
+}
+
+.nav .nav__head{
+/*  display: flex; flex-direction: column; align-items: center; gap: 1rem;*/
+}
+.nav .nav__head .nav__head__pro{
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.nav .nav__head .nav__head__pro .nav__head__pro__picture{
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 0.1rem solid var(--co-primary);
+  object-fit: cover;
+}
+.nav .nav__head .nav__head__pro .nav__head__pro__text{
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--co-secondary);
+}
+
+.nav .nav__body{
+  margin: 2rem 0;
+
+}
+.nav .nav__body .nav__body__title{
+  text-indent: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: Monserrat;
+}
+.nav .nav__body .nav__body__bio{
+  font-size: 0.75rem;
+  color: var(--co-primary);
+  background-color: var(--co-fg);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  line-height: 1.5;
+}
+
+.nav .nav__tail ul{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.nav .nav__tail .nav__tail__btn{
+  background-color: var(--co-secondary);
+  color: var(--co-fg);
+  border: 1px solid var(--co-primary);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  font-family: Monserrat;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  min-width: 100px;
+  text-align: center;
+  flex-grow: 1;
+}
+.nav .nav__tail .nav__tail__btn span{
+  font-size: inherit;
+  text-indent: .5rem;
+}
+.nav .nav__tail .nav__tail__btn:hover{
+  background-color: var(--co-hover);
+  border-color: var(--co-secondary);
+  transform: translateY(-2px);
+  font-weight: bold;
+  color: var(--co-text);
+}
+
+.minimize {
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  align-items: center;
+}
+
+.minimize .nav__head .nav__head__pro .nav__head__pro__picture{
+  width: 50px;
+  height: 50px;
+}
+.minimize .nav__head .nav__head__pro .nav__head__pro__text{
+  display: none;
+}
+
+.minimize .nav__body{
+  display: none;
+}
+
+.minimize .nav__tail ul{
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.minimize .nav__tail .nav__tail__btn{
+  width: 135px;
+  text-wrap: nowrap;
+}
+.minimize .nav__tail .nav__tail__btn span{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.minimize .nav__tail .nav__tail__btn:hover span{
+  width: 70%;
+  height: auto;
+}
