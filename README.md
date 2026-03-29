@@ -14,7 +14,7 @@ Soy el desarrollador que transforma ideas en productos funcionales. No solo escr
 
 - 🎯 **Enfoque práctico**: Priorizo soluciones que funcionan sobre arquitecturas sobreingenierizadas
 - 🧠 **Pensamiento crítico**: Analizo antes de codear para evitar deuda técnica
-- 🚀 **Owner mentality**: Me responsabilizo del resultado final, no solo de mi código
+- 🚀 **Owner mentality**: Calidad sobre el proceso y resultado final, no solo de mi código
 - 🔄 **Aprendizaje continuo**: Siempre explorando nuevas tecnologías y mejores prácticas
 
 ---
@@ -30,12 +30,12 @@ Soy el desarrollador que transforma ideas en productos funcionales. No solo escr
 
 ---
 
-## 📊 Lo que builto
+## 📊 Sobre mí
 
 ```
 const braiidev = {
   experiencia: "3+ años",
-  proyectos: "20+",
+  proyectos: "10+",
   disponibilidad: true,
   enfoque: ["startups", "MVP", "automatizaciones", "SaaS"]
 };
@@ -43,7 +43,7 @@ const braiidev = {
 
 ---
 
-## 💬 ¿Buscas un developer que entreguede resultados?
+## 💬 ¿Buscas un developer que entregue resultados?
 
 Tengo experiencia construyendo:
 
@@ -51,6 +51,7 @@ Tengo experiencia construyendo:
 - ✅ APIs REST robustas y escalables  
 - ✅ Dashboards y sistemas de gestión
 - ✅ Automatizaciones que ahorran horas de trabajo
+- ✅ Integración con Inteligencia Artificial
 - ✅ Despliegue en cloud (AWS, Vercel, Netlify)
 
 **¿Tu proyecto necesita alguien que lo lleve del concepto al production-ready?** Hablemos.
