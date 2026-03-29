@@ -88,12 +88,13 @@ async function fetchRepos() {
     const container = document.getElementById('repos-container');
     
     try {
-        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`);
+        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?q=topic:sharing`);
         
         if (!response.ok) throw new Error('Error al cargar');
         
         const repos = await response.json();
-        const filteredRepos = repos.filter(repo => !repo.fork).slice(0, 6);
+        
+        const filteredRepos = repos.filter(repo => !repo.fork).filter(repo=>repo.topics.includes("sharing")).slice(0,6);
         
         if (filteredRepos.length === 0) {
             container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No hay repositorios públicos para mostrar</div>';
@@ -122,7 +123,7 @@ async function fetchRepos() {
             const forks = repo.forks_count > 0 ? `<i class="fas fa-code-branch"></i> ${repo.forks_count}` : '';
             const page = repo.homepage || ''
             return `
-                <article title="Go to repo" class="repo-card reveal" onclick="window.open('${repo.html_url}', '_blank')">
+                <article title="Go to repo" class="repo-card reveal" onclick="window.open('${page||repo.html_url}', '_blank')">
                     <div class="repo-icon"><i class="fas fa-folder-open"></i></div>
                     <h3 class="repo-name">${repo.name}</h3>
                     <p class="repo-desc">${repo.description || 'Sin descripción disponible'}</p>

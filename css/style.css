@@ -213,6 +213,9 @@ nav.scrolled {
 .mobile-menu-overlay.active .mobile-nav-links li:nth-child(3) {
     transition-delay: 0.3s;
 }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(4) {
+    transition-delay: 0.4s;
+}
 
 .mobile-nav-links a:hover {
     color: var(--accent);
