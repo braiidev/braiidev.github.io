@@ -1,40 +1,284 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="core/css/style.css">
-    <title>Braiidev</title>
-    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/86991447">
-  </head>
-  <body>
-    <!-- Header/Navbar -->
-    <div id="index" class="nav">
-      <header class="nav__head">
-        <a href="#index" class="nav__head__pro">
-          <img class="nav__head__pro__picture" src="https://avatars.githubusercontent.com/u/86991447">
-          <p class="nav__head__pro__text">Bienvenido</p>
-        </a>
-      </header>
-      <div class="nav__body">
-        <h2 class="nav__body__title">Braiidev</h2>
-        <p class="nav__body__bio">💻 Desarrollo de Apps<br>
-          💡 Soluciones y Experiencias<br>
-        <a class="inherit link" target="blank" href="https://github.com/braiidev">@braiidev</a></p>
-      </div>
-      <nav class="nav__tail">
-        <ul id="navigation">
-          <li spalink="repos" class="nav__tail__btn btn-lg">📁<span> Repositorios</span></li>
-          <li spalink="blog" class="nav__tail__btn">📝<span> Blog</span></li>
-          <li spalink="about" class="nav__tail__btn">👤<span> Sobre mí</span></li>
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>braiidev — Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="spotlight" id="spotlight"></div>
+    <span id="inicio"></span>
+    <nav id="navbar">
+        <a href="#inicio" class="logo">braiidev</a>
+        <ul class="nav-links">
+            <li><a href="#work">proyectos</a></li>
+            <li><a href="#stack">stack</a></li>
+            <li><a href="#about">sobre mí</a></li>
+            <li><a href="#contact">contacto</a></li>
         </ul>
-      </nav>
+        <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+            <span id="menuIcon">☰</span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#work" class="mobile-link">proyectos</a></li>
+            <li><a href="#stack" class="mobile-link">stack</a></li>
+            <li><a href="#about" class="mobile-link">sobre mí</a></li>
+            <li><a href="#contact" class="mobile-link">contacto</a></li>
+        </ul>
     </div>
 
-    <!-- Section -->
-    <main class="main">
-      
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-intro">console.log("Hello World");</div>
+                    <h1>
+                        <span class="name">braiidev</span>
+                        <span class="role">Full Stack Developer</span>
+                    </h1>
+                    <p class="hero-description" id="typewriter"></p>
+                    <a href="#work" class="hero-cta">
+                        Ver proyectos <span>↓</span>
+                    </a>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-line">
+                                <span class="line-num">1</span>
+                                <span class="code-keyword">const</span> <span class="code-func">developer</span> = {
+                            </div>
+                            <div class="code-line">
+                                <span class="line-num">2</span>
+                                &nbsp;&nbsp;nombre: <span class="code-string">'Braian'</span>,
+                            </div>
+                            <div class="code-line">
+                                <span class="line-num">3</span>
+                                &nbsp;&nbsp;stack: <span class="code-string">'Python/Flask/Node'</span>,
+                            </div>
+                            <div class="code-line">
+                                <span class="line-num">4</span>
+                                &nbsp;&nbsp;cloud: <span class="code-string">'AWS/Vercel/Netlify'</span>,
+                            </div>
+                            <div class="code-line">
+                                <span class="line-num">5</span>
+                                &nbsp;&nbsp;disponible: <span class="code-keyword">true</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-num">6</span>
+                                };
+                            </div>
+                            <div class="code-line" style="margin-top: 0.5rem;">
+                                <span class="line-num">7</span>
+                                <span class="code-comment">// ¿Trabajamos juntos? 👇</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#work" class="scroll-indicator">
+                <span>Explorar</span>
+                <div class="scroll-arrow"></div>
+            </a>
+        </section>
+
+        <section id="work">
+            <div class="section-header reveal">
+                <span>01.</span> Repositorios destacados
+            </div>
+            <div id="repos-container" class="repos-grid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <span>Cargando proyectos...</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="reveal">
+            <div class="section-header">
+                <span>02.</span> Stack Tecnológico
+            </div>
+            <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 2rem; line-height: 1.8;">
+                Trabajo con un stack moderno y versátil. Desde el backend con Python y Flask, 
+                hasta el deploy en la nube con AWS, Vercel y Netlify.
+            </p>
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fab fa-python"></i></div>
+                    <div class="stack-name">Python</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fas fa-flask"></i></div>
+                    <div class="stack-name">Flask</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fas fa-database"></i></div>
+                    <div class="stack-name">SQLite3</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fas fa-database"></i></div>
+                    <div class="stack-name">Mysql</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fa-brands fa-mdb"></i></div>
+                    <div class="stack-name">MongoDB</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fab fa-node-js"></i></div>
+                    <div class="stack-name">Node.js</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fab fa-js"></i></div>
+                    <div class="stack-name">JavaScript</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fab fa-html5"></i></div>
+                    <div class="stack-name">HTML/CSS</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fab fa-bootstrap"></i></div>
+                    <div class="stack-name">Bootstrap</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fab fa-aws"></i></div>
+                    <div class="stack-name">AWS</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="stack-name">Supabase</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="stack-name">Vercel</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fas fa-globe"></i></div>
+                    <div class="stack-name">Netlify</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon"><i class="fab fa-github"></i></div>
+                    <div class="stack-name">GitHub</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="reveal">
+            <div class="section-header">
+                <span>03.</span> Sobre mí
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Desarrollador Full Stack especializado en crear aplicaciones web 
+                        robustas usando Python y Flask en el backend, combinado con 
+                        JavaScript moderno en el frontend.
+                    </p>
+                    <p>
+                        Manejo bases de datos SQLite3 para soluciones ligeras y eficientes, 
+                        además de tener experiencia desplegando proyectos en AWS, Vercel 
+                        y Netlify. Siempre enfocado en código limpio y buenas prácticas.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-value">3+</span>
+                            <span class="stat-label">Años exp.</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">10+</span>
+                            <span class="stat-label">Proyectos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">Dedicación</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-terminal">
+                    <div class="terminal-line">
+                        <span class="terminal-cmd">$</span> cat stack.txt
+                    </div>
+                    <div class="terminal-output">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Flask</span>
+                        <span class="tech-badge">SQLite3</span>
+                        <span class="tech-badge">Mysql</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">Bootstrap</span>
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Supabase</span>
+                        <span class="tech-badge">Vercel</span>
+                        <span class="tech-badge">Netlify</span>
+                        <span class="tech-badge">GitHub</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-cmd">$</span> current_status
+                    </div>
+                    <div class="terminal-output" style="color: var(--accent);">
+                        Disponible para freelance →
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-cmd">$</span> <span class="typing-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="collab-section reveal">
+            <div class="collab-container">
+                <div class="collab-header">
+                    <h2>¿Tienes un proyecto en mente?</h2>
+                    <p>
+                        Elige la mejor forma de contactarme. Respondo rápido.
+                    </p>
+                </div>
+                
+                <div class="contact-options">
+                    <a href="https://wa.me/5491136155743?text=Hola%20Braian,%20te%20contacto%20desde%20tu%20portfolio" target="_blank" class="contact-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="mailto:braiidev.produccion@gmail.com?subject=Consulta%20desde%20portfolio" class="contact-btn email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://linkedin.com/in/braiidev" target="_blank" class="contact-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                
+                <p class="contact-note">¡Conversemos sobre tu proyecto!</p>
+            </div>
+        </section>
     </main>
 
-    <script type="text/javascript" defer type="module" src="core/js/main.js"></script>
-  </body>
+    <footer class="reveal">
+        <div class="social-links">
+            <a href="https://github.com/braiidev" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/braiidev" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/braiidev" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@braiidev" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:braiidev.produccion@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>Diseñado & construido por braiidev — <span id="year"></span></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
